@@ -1,0 +1,20 @@
+name: Test Hello World
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  run-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.0
+      
+      - name: Run Local Action 
+        uses: ./hello-world-docker-action
+        with:
+          who-to-greet: "me"
+        id: hi-world
+  
+      - name: Tell Time
+        run: echo "The time this was run was ${{ steps.hi-world.outputs.time }}"

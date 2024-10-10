@@ -19,9 +19,9 @@ jobs:
     steps:
       - name: Print data
         run: |
-        echo 'The event triggering this workflow is ${{ github.event_name }}'
-        echo 'The branch for this workflow is ${{ github.ref }}'
-        echo 'The repository is ${{ github.repository }}'
+          echo 'The event triggering this workflow is ${{ github.event_name }}'
+          echo 'The branch for this workflow is ${{ github.ref }}'
+          echo 'The repository is ${{ github.repository }}'
         
       - uses: actions/checkout@v4
       - run: tree
